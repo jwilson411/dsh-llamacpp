@@ -1,0 +1,58 @@
+{
+  "name": "dsh-llamacpp",
+  "version": "0.1.0",
+  "description": "DeepSeek Harness LLM adapter plugin for a local llama.cpp server over its OpenAI-compatible /v1/chat/completions API.",
+  "type": "module",
+  "license": "MIT",
+  "author": "jwilson411",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22.14"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "scripts": {
+    "test": "node --test \"test/**/*.test.js\""
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "llama-cpp",
+    "llm-adapter",
+    "plugin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jwilson411/dsh-llamacpp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jwilson411/dsh-llamacpp/issues"
+  },
+  "homepage": "https://github.com/jwilson411/dsh-llamacpp#readme",
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/dsh-llm": "^0.1.1-rc.2"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "4.0.1",
+    "@deepseek-ai/dsh-attachment": "0.1.1-rc.2",
+    "@deepseek-ai/dsh-brand": "0.1.1-rc.2",
+    "@deepseek-ai/dsh-invariants": "0.1.1-rc.2",
+    "@deepseek-ai/dsh-llm": "0.1.1-rc.2",
+    "@deepseek-ai/dsh-timeout": "0.1.1-rc.2"
+  }
+}
